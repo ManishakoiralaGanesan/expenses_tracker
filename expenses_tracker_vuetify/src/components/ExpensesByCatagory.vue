@@ -2,7 +2,7 @@
   <v-container>
     <v-card-title>Expenses By Catagory</v-card-title>
     <v-card
-      style="background-color: #fff5cc"
+      style="background-color: #fff2e6"
       class="mx-auto"
       max-width="444"
       min-height="70"
@@ -14,7 +14,7 @@
           >Food & Beverage <br />
           $120.56
         </v-col>
-        <v-col>47%</v-col>
+        <v-col style="color: orange">47%</v-col>
       </v-row>
     </v-card>
 
@@ -31,7 +31,7 @@
           >Food & Beverage <br />
           $120.56
         </v-col>
-        <v-col>47%</v-col>
+        <v-col style="color: blue"> 47%</v-col>
       </v-row>
     </v-card>
     <v-card
@@ -47,7 +47,7 @@
           >Food & Beverage <br />
           $120.56
         </v-col>
-        <v-col>47%</v-col>
+        <v-col style="color: violet">47%</v-col>
       </v-row>
     </v-card>
   </v-container>

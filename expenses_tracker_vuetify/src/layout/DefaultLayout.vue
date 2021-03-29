@@ -25,12 +25,12 @@
       <Catagory />
     </v-navigation-drawer>
     <v-navigation-drawer app clipped right width="600">
-      <v-card outlined class="card1">
+      <div class="card1">
         <MonthlyOverview />
-      </v-card>
-      <v-card outlined class="card2">
+      </div>
+      <div class="card2">
         <ExpensesByCatagory />
-      </v-card>
+      </div>
     </v-navigation-drawer>
 
     <v-main>
