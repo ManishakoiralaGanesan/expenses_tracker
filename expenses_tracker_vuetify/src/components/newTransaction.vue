@@ -4,7 +4,8 @@
       <h1 class="display-1">Add Transaction</h1>
     </v-card-title>
     <v-form class="formDesign">
-      <v-select :items="items" label="Type" outlined v-model="type"> </v-select>
+      <v-select :items="items" label="Type" outlined v-model="list.type">
+      </v-select>
       <v-select :items="catogories" label="Catagory" outlined> </v-select>
       <v-text-field
         v-model="list.description"

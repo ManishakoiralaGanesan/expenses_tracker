@@ -9,7 +9,7 @@
             >
 
             <v-spacer></v-spacer>
-
+            <v-icon class="calendar">mdi-calendar</v-icon>
             <v-btn dark @click.stop="dialog = true" icon>
               <v-icon color="white">mdi-plus</v-icon>
             </v-btn>
@@ -32,16 +32,15 @@
               >Total Income <br />
               {{ totIncome }}
             </v-col>
-            <v-col>Net <br />{{ totNet }}</v-col>
+            <v-col class="net">Net <br />{{ totNet }}</v-col>
           </v-row>
         </v-card>
       </template>
 
-      <template slot="items" slot-scope="myprops">
-        <td v-for="header in headers" :key="header.value">
-          {{ myprops.item[header.value] }}
-        </td>
-      </template>
+      <tr v-for="item in items" :key="item.id">
+        <td>{{ item.description }}</td>
+        <td>{{ item.amount }}</td>
+      </tr>
     </v-data-table>
   </div>
 </template>
@@ -76,7 +75,7 @@ export default {
     },
     save() {
       this.transactions.push(this.list);
-
+      this.list = {};
       this.close();
     },
   },
@@ -94,5 +93,8 @@ export default {
 }
 .v-btn {
   background-color: blue;
+}
+.calendar {
+  padding-right: 4%;
 }
 </style>

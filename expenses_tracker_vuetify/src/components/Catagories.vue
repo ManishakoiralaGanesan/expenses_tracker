@@ -38,6 +38,7 @@ export default {
 }
 .v-subheader {
   margin-left: 40px;
+  font-style: bold;
 }
 .v-card {
   padding: 40px;
