@@ -76,7 +76,7 @@ export default {
     },
     save() {
       this.transactions.push(this.list);
-      this.calculateTransaction();
+
       this.close();
     },
   },

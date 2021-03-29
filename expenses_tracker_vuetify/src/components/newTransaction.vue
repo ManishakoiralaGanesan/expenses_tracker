@@ -21,7 +21,7 @@
     </v-form>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn class="primary" @click="calculateValue">Add</v-btn>
+      <v-btn class="primary" @click="save">Add</v-btn>
       <v-btn dark class="grey" @click="close">Reset</v-btn>
       <v-spacer></v-spacer>
     </v-card-actions>
