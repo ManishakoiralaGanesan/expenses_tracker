@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <v-data-table :headers="headers" :items="transactions">
+    <v-data-table :headers="headers" :items="transactions" class="cell-height">
       <template v-slot:top color="white">
         <v-card color="grey lighten-4" flat tile>
           <v-toolbar flat>

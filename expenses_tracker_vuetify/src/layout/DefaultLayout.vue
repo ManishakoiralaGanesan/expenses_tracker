@@ -1,76 +1,109 @@
 <template>
-  <v-app class="app">
+  <v-app class="app" style="background: #fad25a">
     <v-navigation-drawer
       v-model="drawer"
+      class="ma-6"
+      height="95.5%"
       app
-      width="400"
-      color="grey lighten-3"
+      :mini-variant.sync="mini"
     >
-      <v-navigation-drawer v-model="drawer" absolute mini-variant>
-        <v-divider></v-divider>
-        <v-list v-for="item in items" :key="item.icon">
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-icon>
-          </v-list-item>
-        </v-list>
+      <v-list-item>
+        <v-list-item-title class="title">Budject Tracker</v-list-item-title>
+        <v-btn icon @click.stop="mini = !mini">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn>
+      </v-list-item>
 
-        <v-avatar color="red">
-          <span class="white--text headline">CJ</span>
-        </v-avatar>
-      </v-navigation-drawer>
-
-      <v-sheet color="grey lighten-3" height="128" width="100%"></v-sheet>
-      <Catagory />
-    </v-navigation-drawer>
-    <v-navigation-drawer app clipped right width="600">
-      <div class="card1">
-        <MonthlyOverview />
-      </div>
-      <div class="card2">
-        <ExpensesByCatagory />
-      </div>
+      <v-divider></v-divider>
+      <v-list-item
+        class="item"
+        v-for="item in items"
+        :key="item.title"
+        :to="item.link"
+      >
+        <v-list-item-icon>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content class="">{{ item.title }} </v-list-item-content>
+      </v-list-item>
     </v-navigation-drawer>
 
-    <v-main>
-      <TransactionHistory />
-    </v-main>
+    <v-app-bar app color="" class="ma-6">
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-toolbar-title>{{ page }}</v-toolbar-title>
+      <v-spacer></v-spacer>
+
+      <v-avatar>
+        <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+      </v-avatar>
+    </v-app-bar>
+    <v-content
+      class="content ma-6 white"
+      style="
+         {
+          `height: 100%`;
+        }
+      "
+    >
+      <slot />
+    </v-content>
   </v-app>
 </template>
 <script>
-import TransactionHistory from "../components/TransactionHistory.vue";
-import Catagory from "../components/Catagories.vue";
-import MonthlyOverview from "../components/MonthlyOverview.vue";
-import ExpensesByCatagory from "../components/ExpensesByCatagory.vue";
-
 export default {
-  components: {
-    TransactionHistory,
-    Catagory,
-    MonthlyOverview,
-    ExpensesByCatagory,
-  },
+  components: {},
   data() {
     return {
-      mini: true,
       drawer: true,
-      nav: true,
+      mini: true,
+      drawer1: true,
+      dialog: true,
       items: [
         {
-          icon: "mdi-home",
+          icon: "mdi-view-dashboard",
+          title: "Dashboard",
+          link: "/",
         },
-        { icon: "mdi-account" },
+        {
+          icon: "mdi-store",
+          title: "Transactions",
+          link: "/tranasaction-history",
+        },
+        {
+          icon: "mdi-store",
+          title: "Reports",
+          link: "/reports",
+        },
+        {
+          icon: "mdi-store",
+          title: "Catagories",
+          link: "/catagories",
+        },
+        {
+          icon: "mdi-store",
+          title: "Form CCi",
+          link: "/formcci",
+        },
       ],
+      catagories: [
+        { catagory: "Food & Beverage" },
+        { catagory: "Auto Mobile" },
+        { catagory: "House hold" },
+        { catagory: "Groceries" },
+        { catagory: "Utilities" },
+      ],
+      accounts: ["On Hand", "Hdfc bank", "Kvb bank", "Baroda Bank"],
     };
+  },
+  computed: {
+    page() {
+      const route = this.$route.matched[0];
+      return route.name;
+    },
   },
 };
 </script>
 <style scoped>
-.card2 {
-  margin-top: 40%;
-}
-.card1 {
-  margin-top: 20%;
+.item:hover {
 }
 </style>

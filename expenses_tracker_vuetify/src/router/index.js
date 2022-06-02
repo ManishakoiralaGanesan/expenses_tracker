@@ -1,16 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-import TransactionHistory from '../components/TransactionHistory.vue'
-
+//import Home from '../views/Home.vue'
+import TransactionHistory from '../components/Transaction/TransactionList.vue'
+import Reports from "../components/Transaction/Reports.vue"
+import Dashboard from "../components/Transaction/Dashboard.vue"
+import Catagories from "../components/Transaction/Catagories.vue"
+import CCiForm from "../components/FormCci.vue"
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-
-    component: Home
+    name: 'Dashboard',
+    component: Dashboard
+    
+  },
+  {
+    path: '/formcci',
+    name: 'CCi Form',
+    component: CCiForm
     
   },
   {
@@ -18,7 +26,17 @@ const routes = [
     name: 'TransactionHistory',
     component: TransactionHistory
   },
+  {
+    path:'/reports',
+    name:"Reports",
+    component:Reports
+  },
 
+ {
+  path:'/catagories',
+  name:"Catagories",
+  component:Catagories
+ },
   {
     path: '/about',
     name: 'About',

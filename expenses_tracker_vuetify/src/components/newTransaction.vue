@@ -44,51 +44,7 @@ export default {
       ],
     };
   },
-  methods: {
-    /*selectSubItems() {
-      this.subitems = [];
-      if (this.type == "Income") {
-        const list = [
-          { value: "emi", text: "Emi" },
-          { value: "interest", text: "Interest" },
-        ];
-        this.subitems = list.map((listitem) => {
-          return {
-            value: listitem.value,
-            text: listitem.text,
-          };
-        });
-      } else if (this.type == "Expenses") {
-        const list = [
-          { value: "rent", text: "Rent" },
-          { value: "grocessary", text: "Grocessary" },
-        ];
-        this.subitems = list.map((listitem) => {
-          return {
-            value: listitem.value,
-            text: listitem.text,
-          };
-        });
-      } else if (this.type == "Investment") {
-        const list = [
-          { value: "gold", text: "Gold" },
-          { value: "land", text: "Land" },
-        ];
-        this.subitems = list.map((listitem) => {
-          return {
-            value: listitem.value,
-            text: listitem.text,
-          };
-        });
-      }
-    },*/
-    /* calculateValue() {
-      if (this.type == "Income") {
-        this.totValue = this.totValue + parseInt(this.list.amount);
-      }
-      console.log(this.totValue);
-    },*/
-  },
+  methods: {},
 };
 </script>
 <style scoped>

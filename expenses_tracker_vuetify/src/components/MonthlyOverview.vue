@@ -3,7 +3,7 @@
     <v-card-title>Monthly Overview</v-card-title>
     <v-row>
       <v-col>
-        <v-card class="mx-auto" max-width="250" height="200" outlined>
+        <v-card class="mx-auto" max-width="230" height="250" outlined>
           <v-subheader>EXPENSE</v-subheader>
           <v-card-text
             >$1200 <br />
@@ -12,7 +12,7 @@
         </v-card>
       </v-col>
       <v-col>
-        <v-card class="mx-auto" max-width="250" height="200" outlined>
+        <v-card class="mx-auto" max-width="230" height="250" outlined>
           <v-subheader>INCOME</v-subheader>
           <v-card-text
             >$1200 <br />
@@ -25,6 +25,6 @@
 </template>
 <style scoped>
 .v-container {
-  margin: 15%;
+  margin: 10%;
 }
 </style>
